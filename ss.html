@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Confirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid #cc0000;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+      z-index: 9999;
+    }
+
+    .popup h2 {
+      color: #cc0000;
+      margin-bottom: 15px;
+    }
+
+    .popup p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .popup a, .popup button {
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px 20px;
+      color: white;
+      background: #cc0000;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .popup a {
+      background: transparent;
+      color: #0044cc;
+      font-weight: bold;
+      text-decoration: underline;
+      border: none;
+      margin-top: 0;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      text-align: center;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup" id="prankPopup">
+  <h2>🛍️ Order Confirmed!</h2>
+  <p>Your order of <strong>$899.00</strong> has been placed successfully and will be shipped to your saved address.</p>
+  <p>If this wasn't you, please call support immediately:</p>
+  <p><a href="tel:18447092550">📞 1-844-709-2550</a></p>
+  <a href="tel:18447092550"><button>Cancel Order</button></a>
+</div>
+
+
+
+<script>
+  window.onload = function () {
+    document.getElementById("prankPopup").style.display = "block";
+  };
+</script>
+
+</body>
+</html>
