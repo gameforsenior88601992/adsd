@@ -8,7 +8,8 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, sans-serif; /* Reverted to Arial for clarity */
+      background: rgba(0, 0, 0, 0.4); /* Lighter overlay for less intensity */
     }
 
     .popup {
@@ -17,52 +18,64 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: white;
-      border: 2px solid #cc0000;
+      background: #ffffff; /* White background for better readability */
+      border: 2px solid #e60000; /* Slightly darker red for urgency */
       padding: 30px;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: center;
       z-index: 9999;
+      /* Removed shake animation for less aggression */
     }
 
     .popup h2 {
-      color: #cc0000;
+      color: #e60000; /* Matching red for consistency */
+      font-size: 24px; /* Smaller font size */
       margin-bottom: 15px;
+      text-transform: none; /* Removed uppercase for readability */
+      /* Removed blink animation */
     }
 
     .popup p {
-      font-size: 16px;
-      margin-bottom: 20px;
+      font-size: 16px; /* Slightly smaller font */
+      color: #333; /* Dark gray for better contrast */
+      margin-bottom: 15px;
+      font-weight: normal; /* Less bold text */
     }
 
     .popup a, .popup button {
       display: inline-block;
       font-size: 16px;
       margin-top: 10px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       color: white;
-      background: #cc0000;
+      background: #e60000; /* Matching red */
       border: none;
       border-radius: 5px;
       text-decoration: none;
       cursor: pointer;
+      transition: background 0.3s; /* Smooth hover transition */
+      /* Removed pulse animation */
+    }
+
+    .popup button:hover {
+      background: #b30000; /* Darker red on hover */
     }
 
     .popup a {
       background: transparent;
-      color: #0044cc;
+      color: #0066cc; /* Softer blue for link */
       font-weight: bold;
       text-decoration: underline;
       border: none;
-      margin-top: 0;
+      margin-top: 5px;
     }
 
     .disclaimer {
       font-size: 12px;
       text-align: center;
-      color: #888;
+      color: #666; /* Softer gray for disclaimer */
       margin-top: 20px;
     }
   </style>
@@ -70,14 +83,13 @@
 <body>
 
 <div class="popup" id="prankPopup">
-  <h2>🛍️ Order Confirmed!</h2>
-  <p>Your order of <strong>$899.00</strong> has been placed successfully and will be shipped to your saved address.</p>
-  <p>If this wasn't you, please call support immediately:</p>
+  <h2>🚨 Order Confirmed!</h2>
+  <p>Your order of <strong>$899.00</strong> has been processed and will be shipped to your address.</p>
+  <p>If this wasn’t you, contact support now:</p>
   <p><a href="tel:18447092550">📞 1-844-709-2550</a></p>
   <a href="tel:18447092550"><button>Cancel Order</button></a>
+  <div class="disclaimer">Act quickly to stop the shipment if unauthorized.</div>
 </div>
-
-
 
 <script>
   window.onload = function () {
